@@ -15,8 +15,12 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon app.js --watch server --exec babel-node",
-    "thread": "nodemon threads.js --watch server --exec babel-node"
+    "start": "nodemon ./src/app.js --watch server --exec babel-node",
+    "thread": "nodemon ./src/threads.js --watch server --exec babel-node",
+    "pm2": "pm2 start app.js --interpreter babel-node",
+    "watch": "babel -w src/ -d dist/",
+    "build": "babel src/ -d dist/",
+    "serve": "babel -w src/ -d dist/ | nodemon --watch dist"
   },
   "keywords": [],
   "author": "",
